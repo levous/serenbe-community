@@ -1,0 +1,23 @@
+{
+  "generator-fountain-react": {
+    "version": "0.7.2",
+    "props": {
+      "ci": [
+        "circleci"
+      ],
+      "js": "babel",
+      "modules": "webpack",
+      "framework": "react",
+      "argv": {
+        "remain": [],
+        "cooked": [],
+        "original": []
+      },
+      "resolved": "/Volumes/MacintoshMedia/Users/rustyzarse/.nvm/versions/node/v4.2.1/lib/node_modules/generator-fountain-webapp/node_modules/generator-fountain-react/generators/app/index.js",
+      "namespace": "fountain-react",
+      "css": "scss",
+      "sample": "todoMVC",
+      "router": "router"
+    }
+  }
+}
