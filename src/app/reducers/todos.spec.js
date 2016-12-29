@@ -1,5 +1,5 @@
 import todos from './todos';
-import * as types from '../constants/ActionTypes';
+import * as types from '../constants/TodoActionTypes';
 
 describe('todos reducer', () => {
   it('should handle initial state', () => {
@@ -167,7 +167,7 @@ describe('todos reducer', () => {
     ]);
   });
 
-  it('should handle COMPLETE_ALL', () => {
+  it('should handle COMPLETE_ALL_TODOS', () => {
     expect(
       todos([
         {
@@ -180,7 +180,7 @@ describe('todos reducer', () => {
           id: 0
         }
       ], {
-        type: types.COMPLETE_ALL
+        type: types.COMPLETE_ALL_TODOS
       })
     ).toEqual([
       {
@@ -207,7 +207,7 @@ describe('todos reducer', () => {
           id: 0
         }
       ], {
-        type: types.COMPLETE_ALL
+        type: types.COMPLETE_ALL_TODOS
       })
     ).toEqual([
       {
@@ -222,7 +222,7 @@ describe('todos reducer', () => {
     ]);
   });
 
-  it('should handle CLEAR_COMPLETED', () => {
+  it('should handle CLEAR_COMPLETED_TODOS', () => {
     expect(
       todos([
         {
@@ -235,7 +235,7 @@ describe('todos reducer', () => {
           id: 0
         }
       ], {
-        type: types.CLEAR_COMPLETED
+        type: types.CLEAR_COMPLETED_TODOS
       })
     ).toEqual([
       {
@@ -246,14 +246,14 @@ describe('todos reducer', () => {
     ]);
   });
 
-  it('should not generate duplicate ids after CLEAR_COMPLETED', () => {
+  it('should not generate duplicate ids after CLEAR_COMPLETED_TODOS', () => {
     expect(
       [
         {
           type: types.COMPLETE_TODO,
           id: 0
         }, {
-          type: types.CLEAR_COMPLETED
+          type: types.CLEAR_COMPLETED_TODOS
         }, {
           type: types.ADD_TODO,
           text: 'Write more tests'

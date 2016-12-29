@@ -1,13 +1,15 @@
 import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+
 import Header from '../components/Header';
 import MainSection from '../components/MainSection';
+import MemberList from '../components/membership/MemberList';
 import * as TodoActions from '../actions/index';
 
 class App extends Component {
   render() {
-    const {todos, actions} = this.props;
+    const {todos, actions, members} = this.props;
     return (
       <div>
         <Header
@@ -17,6 +19,9 @@ class App extends Component {
           todos={todos}
           actions={actions}
           />
+        <MemberList
+          members={members}
+          />
       </div>
     );
   }
@@ -24,12 +29,14 @@ class App extends Component {
 
 App.propTypes = {
   todos: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  members: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    todos: state.todos
+    todos: state.todos,
+    members: state.members
   };
 }
 
