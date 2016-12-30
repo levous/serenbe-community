@@ -24,8 +24,11 @@ describe('Member component', () => {
   it('should render member item', () => {
     const {output} = setup();
     expect(output.type).toBe('div');
-    expect(output.props.children).toEqual(
-      [ <h2>Fred Flintstone</h2>]
+    expect(output).toEqual(
+      <div key="member1">
+        <h2>Fred Flintstone</h2>
+        <div>missing property address</div>
+      </div>
     );
   });
 });
