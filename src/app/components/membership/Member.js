@@ -5,9 +5,9 @@ export default class Member extends Component {
   render() {
     const member = this.props.member;
     return (
-      <div>
-        <h2>{member.firstName} {member.lastName}</h2>
-        {member.propertyAddress && <Address address={member.propertyAddress}/>}
+      <div key={`member${member.id}`}>
+        <h2>{`${member.firstName} ${member.lastName}`}</h2>
+        {member.propertyAddress ? <Address address={member.propertyAddress}/> : <div>missing property address</div>}
       </div>
     );
   }

@@ -5,14 +5,13 @@ import Address from './Address';
 function setup(propOverrides) {
   const props = Object.assign({
     street: '123 Anywhere Rd.',
-    street2: null,
     city: 'Atlanta',
     state: 'GA',
     zip: '30306'
   }, propOverrides);
 
   const renderer = TestUtils.createRenderer();
-  renderer.render(<Address {...props}/>);
+  renderer.render(<Address address={props}/>);
   const output = renderer.getRenderOutput();
 
   return {

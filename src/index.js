@@ -8,6 +8,8 @@ import configureStore from './app/store/configureStore';
 import {Router, Route, browserHistory} from 'react-router';
 
 import 'todomvc-app-css/index.css';
+require('./stylesheets/main.scss');
+//import './stylesheets/main.scss';
 
 const store = configureStore();
 

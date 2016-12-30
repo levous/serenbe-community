@@ -12,7 +12,7 @@ export default class Address extends Component {
     return (
       <div>
         <div>{streetFull}</div>
-        <div>{address.city}, {address.state} {address.zip}</div>
+        <div>{`${address.city}, ${address.state} ${address.zip}`}</div>
       </div>
     );
   }

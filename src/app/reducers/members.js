@@ -1,5 +1,6 @@
 const initialState = [
   {
+    id: 1,
     firstName: 'Fred',
     lastName: 'Flintstone',
     propertyAddress: {
@@ -10,6 +11,7 @@ const initialState = [
     }
   },
   {
+    id: 2,
     firstName: 'Barney',
     lastName: 'Rubble',
     propertyAddress: {
@@ -20,10 +22,12 @@ const initialState = [
     }
   },
   {
+    id: 3,
     firstName: 'Bam Bam',
     lastName: 'Stonehenge'
   },
   {
+    id: 4,
     firstName: 'Danny',
     lastName: 'Dino',
     propertyAddress: {

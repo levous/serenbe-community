@@ -6,8 +6,8 @@ export default class MemberList extends Component {
     return (
       <div>
         {
-          this.props.members.map((member) =>
-              <Member member={member}/>
+          this.props.members.map((member, i) =>
+            <Member key={`mem${i}`} member={member}/>
           )
         }
       </div>

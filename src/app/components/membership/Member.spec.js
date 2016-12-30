@@ -2,10 +2,30 @@ import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 import Member from './Member';
 
+function setup(propOverrides) {
+  const props = Object.assign({
+    id: 1,
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  }, propOverrides);
+
+  const renderer = TestUtils.createRenderer();
+  renderer.render(<Member member={props}/>);
+  const output = renderer.getRenderOutput();
+
+  return {
+    output,
+    props,
+    renderer
+  };
+}
+
 describe('Member component', () => {
-  it('should render default text', () => {
-    const member = TestUtils.renderIntoDocument(<Member/>);
-    const h2 = TestUtils.findRenderedDOMComponentWithTag(member, 'h2');
-    expect(h2.textContent).toEqual('Fred Flintstone');
+  it('should render member item', () => {
+    const {output} = setup();
+    expect(output.type).toBe('div');
+    expect(output.props.children).toEqual(
+      [ <h2>Fred Flintstone</h2>]
+    );
   });
 });
